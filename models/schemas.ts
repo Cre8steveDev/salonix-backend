@@ -58,17 +58,20 @@ const appointmentSchema = new Schema<AppointmentDocument>(
 //  Users Schema
 const userSchema = new Schema(
   {
-    full_name: { type: String, required: true },
+    fullName: { type: String, required: true },
     email: { type: String, required: true, unique: true },
-    phone_number: { type: Number, required: true },
+    phoneNumber: { type: Number, required: true },
     password: { type: String, required: true },
     gender: { type: String, required: true },
-    profile_photo: {
+    profilePhoto: {
       type: String,
       required: false,
-      default: '/images/profile.jpeg',
+      default:
+        'https://upload.wikimedia.org/wikipedia/commons/a/af/Default_avatar_profile.jpg',
     },
-    appointments: [{ type: ObjectId, ref: 'Appointments' }],
+    appointments: {
+      type: [{ date: String, time: String, chosenStylePhoto: String }],
+    },
   },
   { timestamps: true }
 );

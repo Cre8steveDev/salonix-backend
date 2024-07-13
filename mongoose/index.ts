@@ -4,13 +4,13 @@ import { MONGO_URI } from '../config';
 export default async function connectDB() {
   // Mongoose Client Options
   const clientOptions: ConnectOptions = {
-    dbName: 'Solanix',
+    dbName: 'Salonix',
     serverApi: { version: '1', strict: true, deprecationErrors: true },
   };
 
   try {
     const response = await mongoose.connect(MONGO_URI!, clientOptions);
-    console.log('Connected to DB: ', response.connection);
+    console.log('Connected to DB.');
 
     // return true when mongoose succesfully connected
     return true;

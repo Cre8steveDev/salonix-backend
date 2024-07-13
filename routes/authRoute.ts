@@ -1,57 +1,32 @@
-import { NextFunction, Request, Response, Router } from 'express';
-import { Users, Wallets, Doctors } from '../models/models';
-import { SignUp } from '../controllers/auth/SignUp';
-import passport from 'passport';
-import localStrategy from '../controllers/strategies/localstrategy';
-import { TSignupForm } from '../types/types';
+import { Router } from 'express';
+import SignUp from '../controllers/auth/SignUp';
+import SignIn from '../controllers/auth/SignIn';
+import verifyUser from '../middleware/verifyUser';
 
+// Extended Request Interface
+import { NewRequest } from '../types/types';
+import refreshToken from '../controllers/auth/RefreshToken';
+
+//  Instantiate Auth Router
 const router = Router();
 
-const loginErrorHandler = (
-  err: any,
-  req: Request,
-  res: Response,
-  next: NextFunction
-) => {
-  if (err) {
-    return res.status(403).json({ message: 'Invalid Login Details' });
-  }
-
-  next();
-};
-
-// SignUp Route
+// AUTHORIZATION
 router.post('/signup', SignUp);
+router.post('/signin', SignIn);
+router.get('/refresh-token', verifyUser, refreshToken);
 
-// SignIn Route with PassportJS Authentication
-passport.use(localStrategy);
+// Testing Protected Routes
+router.get('/protected', verifyUser, (req, res) => {
+  // Retrieve token from  verification
+  const { tokenData } = req as NewRequest;
 
-router.post(
-  '/signin',
-  passport.authenticate('local'),
-  loginErrorHandler,
-  (request: Request, response: Response) => {
-    return response.status(200).json(request.user);
-  }
-);
+  if (!tokenData)
+    return res.status(401).json({
+      success: false,
+      message: 'User not authorized to access the resource.',
+    });
 
-// Confirm Login Status
-router.get('/status', (request, response) => {
-  return request.user
-    ? response.json({ authenticated: true })
-    : response.json({ authenticated: false });
-});
-
-// Logout route
-router.get('/logout', (request, response) => {
-  // if (!request.user) return response.sendStatus(401);
-
-  // Call the logout function on the request
-  request.logout((err) => {
-    if (err) return response.sendStatus(400);
-
-    response.sendStatus(200);
-  });
+  return res.json({ message: 'User is authorized here.' });
 });
 
 export default router;

@@ -1,6 +1,4 @@
 import mongoose from 'mongoose';
-
-// import the schemas
 import { userSchema, appointmentSchema } from './schemas';
 
 // Create all Models from the Schemas

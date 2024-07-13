@@ -13,7 +13,8 @@ Stephen Omoregie (Cre8steveDev)
 ## Technologies Used for the Backend of this project
 
 - NodeJS (ExpressJs Framework)
+- TypeScript - For Typesafety and ease during development
 - MongoDB - NoSQL Database (Hosted remotely on MongoDB Atlas)
 - JSONWebTokens - For Signing Authentication for the user
-- MondoDB Compass - For local testing during development
+- MongoDB Compass - For local testing during development
 - Postman - for testing API Endpoints
