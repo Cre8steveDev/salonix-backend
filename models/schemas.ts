@@ -63,6 +63,7 @@ const userSchema = new Schema(
     phoneNumber: { type: Number, required: true },
     password: { type: String, required: true },
     gender: { type: String, required: true },
+    walledId: { type: Schema.Types.ObjectId, ref: 'Wallet', required: true },
     profilePhoto: {
       type: String,
       required: false,
@@ -75,7 +76,28 @@ const userSchema = new Schema(
   },
   { timestamps: true }
 );
+// Wallet Schema For User
+const walletSchema = new Schema({
+  currentBalance: { type: Number, default: 0 },
+  transactions: {
+    type: [
+      {
+        amount: Number,
+        transactionType: {
+          type: String,
+          enum: {
+            values: ['Deposit', 'Payment'],
+            message: '{VALUE} is not a valid transaction type.',
+          },
+        },
+        service: String,
+        date: String,
+      },
+    ],
+  },
+});
 
+// Service Schema
 const servicesSchema = new Schema(
   {
     id: { type: String, required: true, unique: true },
@@ -87,6 +109,7 @@ const servicesSchema = new Schema(
   { timestamps: true }
 );
 
+// Popular Hairstyles Schema
 const popularHairstyleSchema = new Schema(
   {
     image: { type: String, required: true, unique: true },
@@ -97,6 +120,7 @@ const popularHairstyleSchema = new Schema(
 
 export {
   userSchema,
+  walletSchema,
   appointmentSchema,
   servicesSchema,
   popularHairstyleSchema,
