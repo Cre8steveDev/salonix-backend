@@ -2,7 +2,6 @@ import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
 import { COOKIE_SECRET } from '../config';
 import { Users } from '../models/models';
-import { NewRequest } from '../types/types';
 
 // Define verifyUser Middleware for protected routes
 const verifyUser = async (req: Request, res: Response, next: NextFunction) => {
@@ -34,19 +33,31 @@ const verifyUser = async (req: Request, res: Response, next: NextFunction) => {
         message: 'Session has expired',
       });
     }
-    // Verify that the user id is a valid registered user
-    const { id } = payload as jwt.JwtPayload;
-    const isValidUser = await Users.findById(id);
 
-    // append the tokenPayload to the request object
-    if (isValidUser) {
-      // @ts-ignore
-      req.tokenData = payload;
-      // @ts-ignore
-      req.user = isValidUser;
+    // Verify that the user id is a valid registered user
+    try {
+      const { id } = payload as jwt.JwtPayload;
+      const isValidUser = await Users.findById(id);
+
+      // To make it more robust, I could add a current Token to the user
+      // database colume to check which is the most current
+      // for verification
+
+      // append the tokenPayload to the request object
+      if (isValidUser) {
+        // @ts-ignore
+        req.tokenData = payload;
+        // @ts-ignore
+        req.user = isValidUser;
+        next();
+      }
+      throw new Error();
+    } catch (error) {
+      return res.status(401).json({
+        success: false,
+        message: 'User not authorized. Please Sign In.',
+      });
     }
-    //   if all goes well
-    next();
   });
 };
 

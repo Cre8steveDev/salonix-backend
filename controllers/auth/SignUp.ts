@@ -10,7 +10,7 @@ const SignUp = async (req: Request, res: Response) => {
   // Validate request body
   const bodyArray = [fullName, email, gender, phoneNumber, password];
 
-  if (!bodyArray.every((item) => item.length > 4))
+  if (!bodyArray.every((item) => item.length >= 4))
     return res.status(400).json({
       message: 'BAD REQUEST. Please check the entry you submitted in the form',
     });
@@ -31,12 +31,12 @@ const SignUp = async (req: Request, res: Response) => {
 
     // Catch any error that may have occured
   } catch (error: any) {
-    return res.status(403).json({ message: error!.message });
+    return res.status(403).json({ success: false, message: error!.message });
   }
 
   return res
     .status(201)
-    .json({ message: 'User Account created successfully.' });
+    .json({ success: true, message: 'User Account created successfully.' });
 };
 
 export default SignUp;

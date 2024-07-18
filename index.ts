@@ -15,6 +15,7 @@ import { Appointments, Users } from './models/models';
 
 // import Routers
 import authRouter from './routes/authRoute';
+import serviceRouter from './routes/appResources';
 
 const app = express();
 const port = PORT || 3000;
@@ -44,9 +45,9 @@ app.get('/health', (req: Request, res: Response) => {
 
 // Add route handlers as middleware
 app.use('/api/auth', authRouter);
+app.use('/api/resources', serviceRouter);
 
 // Connect the Database and Start The Server on Success
-
 connectDB().then((response) => {
   if (response)
     return app.listen(port, () =>
