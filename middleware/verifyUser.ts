@@ -49,7 +49,7 @@ const verifyUser = async (req: Request, res: Response, next: NextFunction) => {
         req.tokenData = payload;
         // @ts-ignore
         req.user = isValidUser;
-        next();
+        return next();
       }
       throw new Error();
     } catch (error) {

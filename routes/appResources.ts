@@ -50,7 +50,14 @@ router.post('/services/seed', async (request: Request, response: Response) => {
 
   // Ttry to add the data to the Database
   try {
-    const newService = new Services({ id, image, description, rating, price });
+    const newService = new Services({
+      id,
+      image,
+      description,
+      rating,
+      price,
+      name,
+    });
 
     await newService.save();
 

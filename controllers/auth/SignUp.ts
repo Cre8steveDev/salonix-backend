@@ -1,7 +1,7 @@
 import { TSignupForm } from '../../types/types';
 import type { Request, Response } from 'express';
 import bcryptjs from 'bcryptjs';
-import { Users } from '../../models/models';
+import { Users, Wallet } from '../../models/models';
 
 const SignUp = async (req: Request, res: Response) => {
   const { fullName, email, gender, phoneNumber, password } =
@@ -15,6 +15,17 @@ const SignUp = async (req: Request, res: Response) => {
       message: 'BAD REQUEST. Please check the entry you submitted in the form',
     });
 
+  // Create a new wallet to be saved for the user
+  const newWallet = new Wallet();
+  try {
+    await newWallet.save();
+  } catch (error) {
+    return res.status(500).json({
+      success: false,
+      message: 'Unable to proceed with registration. Try again later.',
+    });
+  }
+
   try {
     const salt = bcryptjs.genSaltSync(10);
     const hashedPassword = bcryptjs.hashSync(password, salt);
@@ -25,6 +36,7 @@ const SignUp = async (req: Request, res: Response) => {
       email,
       gender,
       phoneNumber,
+      walletId: newWallet._id,
       password: hashedPassword,
     });
     await newUser.save();

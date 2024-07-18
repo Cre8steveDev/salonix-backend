@@ -41,16 +41,25 @@ const SignIn = async (req: Request, res: Response) => {
     );
 
     // Destructure values from the user
-    const { fullName, phoneNumber, profilePhoto, gender } = validUser;
-    const userData = { fullName, phoneNumber, profilePhoto, gender, email };
+    const { fullName, phoneNumber, profilePhoto, gender, walletId } = validUser;
+    const userData = {
+      fullName,
+      phoneNumber,
+      profilePhoto,
+      gender,
+      email,
+      walletId,
+    };
 
     // Also send back other details needed on the front end
     return res.status(200).json({
       success: true,
       message: 'Logged in Successfully.',
-      auth: userToken,
+      auth: { id: userToken, tokenExpiry },
       user: userData,
     });
+
+    // Error handling
   } catch (error: any) {
     return res.status(401).json({
       success: false,

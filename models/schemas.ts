@@ -63,7 +63,7 @@ const userSchema = new Schema(
     phoneNumber: { type: Number, required: true },
     password: { type: String, required: true },
     gender: { type: String, required: true },
-    walledId: { type: Schema.Types.ObjectId, ref: 'Wallet', required: true },
+    walletId: { type: Schema.Types.ObjectId, ref: 'Wallet', required: true },
     profilePhoto: {
       type: String,
       required: false,
@@ -71,7 +71,7 @@ const userSchema = new Schema(
         'https://upload.wikimedia.org/wikipedia/commons/a/af/Default_avatar_profile.jpg',
     },
     appointments: {
-      type: [{ date: String, time: String, chosenStylePhoto: String }],
+      type: [{ date: String, time: String, service: String }],
     },
   },
   { timestamps: true }
@@ -101,6 +101,7 @@ const walletSchema = new Schema({
 const servicesSchema = new Schema(
   {
     id: { type: String, required: true, unique: true },
+    name: { type: String, required: true },
     image: { type: String, required: true, unique: true },
     description: { type: String, required: true, unique: true },
     rating: { type: Number, required: true },

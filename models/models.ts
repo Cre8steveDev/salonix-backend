@@ -17,4 +17,4 @@ const PopularHairStyles = mongoose.model(
   popularHairstyleSchema
 );
 
-export { Users, Appointments, Services, PopularHairStyles };
+export { Users, Appointments, Services, PopularHairStyles, Wallet };
