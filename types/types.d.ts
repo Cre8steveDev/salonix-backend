@@ -30,3 +30,15 @@ export type TSigninForm = {
   email: string;
   password: string;
 };
+
+type TAppointmentData = {
+  walletId: string;
+  chosenService: string;
+  price: number;
+  date: string;
+  startTime: string;
+  endTime: string;
+  email: string;
+  fullName: string;
+  gender: string;
+};

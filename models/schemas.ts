@@ -36,18 +36,18 @@ const appointmentSchema = new Schema<AppointmentDocument>(
           { id: 6, isBooked: false, startTime: '10:30am', endTime: '11:00am' },
           { id: 7, isBooked: false, startTime: '11:00am', endTime: '11:30am' },
           { id: 8, isBooked: false, startTime: '11:30am', endTime: '12:00am' },
-          { id: 9, isBooked: false, startTime: '12:00am', endTime: '12:30am' },
-          { id: 10, isBooked: false, startTime: '12:30am', endTime: '01:00am' },
-          { id: 11, isBooked: false, startTime: '01:00am', endTime: '01:30am' },
-          { id: 12, isBooked: false, startTime: '01:30am', endTime: '02:00am' },
-          { id: 13, isBooked: false, startTime: '02:00am', endTime: '02:30am' },
-          { id: 14, isBooked: false, startTime: '02:30am', endTime: '03:00am' },
-          { id: 15, isBooked: false, startTime: '03:00am', endTime: '03:30am' },
-          { id: 16, isBooked: false, startTime: '03:30am', endTime: '04:00am' },
-          { id: 17, isBooked: false, startTime: '04:00am', endTime: '04:30am' },
-          { id: 18, isBooked: false, startTime: '04:30am', endTime: '05:00am' },
-          { id: 19, isBooked: false, startTime: '05:00am', endTime: '05:30am' },
-          { id: 20, isBooked: false, startTime: '05:30am', endTime: '06:00am' },
+          { id: 9, isBooked: false, startTime: '12:00am', endTime: '12:30pm' },
+          { id: 10, isBooked: false, startTime: '12:30am', endTime: '01:00pm' },
+          { id: 11, isBooked: false, startTime: '01:00pm', endTime: '01:30pm' },
+          { id: 12, isBooked: false, startTime: '01:30pm', endTime: '02:00pm' },
+          { id: 13, isBooked: false, startTime: '02:00pm', endTime: '02:30pm' },
+          { id: 14, isBooked: false, startTime: '02:30pm', endTime: '03:00pm' },
+          { id: 15, isBooked: false, startTime: '03:00pm', endTime: '03:30pm' },
+          { id: 16, isBooked: false, startTime: '03:30pm', endTime: '04:00pm' },
+          { id: 17, isBooked: false, startTime: '04:00pm', endTime: '04:30pm' },
+          { id: 18, isBooked: false, startTime: '04:30pm', endTime: '05:00pm' },
+          { id: 19, isBooked: false, startTime: '05:00pm', endTime: '05:30pm' },
+          { id: 20, isBooked: false, startTime: '05:30pm', endTime: '06:00pm' },
         ];
       },
     },
@@ -71,11 +71,23 @@ const userSchema = new Schema(
         'https://upload.wikimedia.org/wikipedia/commons/a/af/Default_avatar_profile.jpg',
     },
     appointments: {
-      type: [{ date: String, time: String, service: String }],
+      type: [
+        {
+          email: String,
+          gender: String,
+          fullName: String,
+          chosenService: String,
+          price: Number,
+          date: String,
+          startTime: String,
+          endTime: String,
+        },
+      ],
     },
   },
   { timestamps: true }
 );
+
 // Wallet Schema For User
 const walletSchema = new Schema({
   currentBalance: { type: Number, default: 0 },
