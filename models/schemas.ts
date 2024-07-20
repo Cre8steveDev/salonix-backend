@@ -9,14 +9,14 @@ interface AppointmentDataObj {
 }
 
 interface AppointmentDocument extends Document {
-  id: number;
+  dayId: string;
   dayAppointments: AppointmentDataObj[];
 }
 
 // Appointment Schema
 const appointmentSchema = new Schema<AppointmentDocument>(
   {
-    id: String,
+    dayId: String,
     dayAppointments: {
       type: [
         {
