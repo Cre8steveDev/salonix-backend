@@ -20,6 +20,7 @@ const refreshToken = async (
     success: true,
     message: 'Successfully refreshed token',
     auth: userToken,
+    tokenExpiry: tokenExpiry,
   });
 };
 

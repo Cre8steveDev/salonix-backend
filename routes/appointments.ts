@@ -40,7 +40,6 @@ router.get('/day/:date', async (request: Request, response: Response) => {
 
   // If date has not been previously created in DB
   try {
-    console.log('Day not found, so creating a new entry');
     const createDaySlots = new Appointments({ dayId: date });
     const saved = await createDaySlots.save();
 
@@ -52,7 +51,6 @@ router.get('/day/:date', async (request: Request, response: Response) => {
       date,
     });
   } catch (error) {
-    console.log('An unknown error occured.');
     return response.status(200).json({
       success: false,
       message: 'An unknown error occured.',
@@ -82,6 +80,12 @@ router.post(
 
     // Begin Process for update
     try {
+      // Check again to ensure price was not
+      // intercepted and changed to negative value
+      if (appointmentData.price < 0) {
+        throw new Error('Invalid Sum');
+      }
+
       // 1. Update the wallet
       const wallet = await Wallet.findOneAndUpdate(
         { _id: appointmentData.walletId },
