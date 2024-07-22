@@ -11,7 +11,6 @@ import cookieParser from 'cookie-parser';
 import session from 'express-session';
 
 import connectDB from './mongoose';
-import { Appointments, Users } from './models/models';
 
 // import Routers
 import authRouter from './routes/authRoute';
@@ -30,6 +29,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // session middleware on the app instance
+// This is not exactly doing anything as
+// I'm handling sessions using jwt
 app.use(
   session({
     secret: session_secret!,

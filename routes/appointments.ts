@@ -187,7 +187,6 @@ router.get(
     const user = request.user;
 
     try {
-      console.log(user);
       response
         .status(200)
         .json({ success: true, appointments: user.appointments });

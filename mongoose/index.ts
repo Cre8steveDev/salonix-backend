@@ -9,9 +9,8 @@ export default async function connectDB() {
   };
 
   try {
-    const response = await mongoose.connect(MONGO_URI!, clientOptions);
+    await mongoose.connect(MONGO_URI!, clientOptions);
     console.log('Connected to DB.');
-
     // return true when mongoose succesfully connected
     return true;
   } catch (error) {
