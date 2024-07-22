@@ -174,4 +174,23 @@ router.post(
   }
 );
 
+// Retrieve all Appointments made by the user.
+router.get(
+  '/all-appointments',
+  verifyUser,
+  async (request: Request, response: Response) => {
+    // @ts-ignore
+    const user = request.user;
+
+    try {
+      console.log(user);
+      response
+        .status(200)
+        .json({ success: true, appointments: user.appointments });
+    } catch (error) {
+      response.status(404).json({ success: false, appointments: null });
+    }
+  }
+);
+
 export default router;
