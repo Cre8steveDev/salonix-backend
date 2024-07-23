@@ -1,0 +1,72 @@
+[{
+  "_id": {
+    "$oid": "6698528b9ab4e4a6992e2596"
+  },
+  "id": "proHairCutz",
+  "image": "https://res.cloudinary.com/dg0qc5gkl/image/upload/v1721255796/hair-cut-max_qw5r0n.png",
+  "description": "Experience precision and style with our professional haircuts. Our skilled barbers combine classic techniques with modern trends to create a look that suits your personality and lifestyle. Whether you're after a clean fade, textured crop, or traditional cut, we'll enhance your features and ensure you leave looking sharp. Enjoy a relaxing scalp massage and expert styling tips to maintain your new look between visits.",
+  "rating": 4,
+  "price": 5000,
+  "createdAt": {
+    "$date": "2024-07-17T23:23:55.152Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-17T23:23:55.152Z"
+  },
+  "__v": 0,
+  "name": "Pro Hair Cutz"
+},
+{
+  "_id": {
+    "$oid": "669853869ab4e4a6992e2598"
+  },
+  "id": "lockedDreads",
+  "image": "https://res.cloudinary.com/dg0qc5gkl/image/upload/v1721255796/dread-max_swjj2e.png",
+  "description": "Transform your hair with our expert dreadlock services. We specialize in creating and maintaining healthy, stylish locks for all hair types. Our professionals use proven techniques to start, repair, or tighten your dreads, ensuring a clean and uniform appearance. We'll guide you through the locking process and provide essential care tips for long-lasting, beautiful results.",
+  "rating": 5,
+  "price": 6500,
+  "createdAt": {
+    "$date": "2024-07-17T23:28:06.804Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-17T23:28:06.804Z"
+  },
+  "__v": 0,
+  "name": "Locked Dreads"
+},
+{
+  "_id": {
+    "$oid": "669853f79ab4e4a6992e259a"
+  },
+  "id": "braidsAndWeaves",
+  "image": "https://res.cloudinary.com/dg0qc5gkl/image/upload/v1721255796/weave-max_zebnnq.png",
+  "description": "Elevate your style with our braiding and weaving services. Our skilled stylists create intricate designs, from classic cornrows to trendy box braids and protective styles. We use high-quality hair extensions and gentle techniques to ensure comfort and longevity. Whether you're looking for a bold change or a low-maintenance style, we'll craft a look that turns heads.",
+  "rating": 4,
+  "price": 7000,
+  "createdAt": {
+    "$date": "2024-07-17T23:29:59.373Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-17T23:29:59.373Z"
+  },
+  "__v": 0,
+  "name": "Braids & Weaves"
+},
+{
+  "_id": {
+    "$oid": "669854399ab4e4a6992e259c"
+  },
+  "id": "hairTreatment",
+  "image": "https://res.cloudinary.com/dg0qc5gkl/image/upload/v1721255797/treatment-max_hpugn2.png",
+  "description": "Revitalize your hair with our nourishing treatments. We offer a range of services to address various hair concerns, including deep conditioning, scalp therapy, and keratin treatments. Our experts assess your hair's needs and recommend tailored solutions to restore shine, strength, and health. Experience the transformative power of professional-grade products and techniques for lustrous, manageable hair.",
+  "rating": 5,
+  "price": 4000,
+  "createdAt": {
+    "$date": "2024-07-17T23:31:05.447Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-17T23:31:05.447Z"
+  },
+  "__v": 0,
+  "name": "Hair Treatment"
+}]

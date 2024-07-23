@@ -1,0 +1,140 @@
+[{
+  "_id": {
+    "$oid": "66985e73f9a023587bcf77e4"
+  },
+  "image": "https://res.cloudinary.com/dg0qc5gkl/image/upload/v1721256116/Frame_28984_esf6vy.png",
+  "name": "Bold Braids",
+  "createdAt": {
+    "$date": "2024-07-18T00:14:43.449Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-18T00:14:43.449Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66985ea9f9a023587bcf77e6"
+  },
+  "image": "https://res.cloudinary.com/dg0qc5gkl/image/upload/v1721256116/Frame_28985_3_ad1c5s.png",
+  "name": "Pretty Curls",
+  "createdAt": {
+    "$date": "2024-07-18T00:15:37.646Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-18T00:15:37.646Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66985ed3f9a023587bcf77e8"
+  },
+  "image": "https://res.cloudinary.com/dg0qc5gkl/image/upload/v1721256117/Frame_28985_4_sy2rcu.png",
+  "name": "Man Cutz",
+  "createdAt": {
+    "$date": "2024-07-18T00:16:19.707Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-18T00:16:19.707Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66985f01f9a023587bcf77ea"
+  },
+  "image": "https://res.cloudinary.com/dg0qc5gkl/image/upload/v1721256606/4965_bynuxf.jpg",
+  "name": "Strong Man",
+  "createdAt": {
+    "$date": "2024-07-18T00:17:05.298Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-18T00:17:05.298Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66985f20f9a023587bcf77ec"
+  },
+  "image": "https://res.cloudinary.com/dg0qc5gkl/image/upload/v1721256608/2150908581_t6wajk.jpg",
+  "name": "Le Romantix",
+  "createdAt": {
+    "$date": "2024-07-18T00:17:36.173Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-18T00:17:36.173Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66985f59f9a023587bcf77ee"
+  },
+  "image": "https://res.cloudinary.com/dg0qc5gkl/image/upload/v1721256610/2149916677_ni0evn.jpg",
+  "name": "Low Cutz",
+  "createdAt": {
+    "$date": "2024-07-18T00:18:33.607Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-18T00:18:33.607Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66985f81f9a023587bcf77f0"
+  },
+  "image": "https://res.cloudinary.com/dg0qc5gkl/image/upload/v1721256614/2149415769_cltocq.jpg",
+  "name": "Afro Kingz",
+  "createdAt": {
+    "$date": "2024-07-18T00:19:13.775Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-18T00:19:13.775Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66985faff9a023587bcf77f2"
+  },
+  "image": "https://res.cloudinary.com/dg0qc5gkl/image/upload/v1721256619/2148747989_irrkbz.jpg",
+  "name": "Coolie Prettz",
+  "createdAt": {
+    "$date": "2024-07-18T00:19:59.351Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-18T00:19:59.351Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66985ff9f9a023587bcf77f4"
+  },
+  "image": "https://res.cloudinary.com/dg0qc5gkl/image/upload/v1721256620/2148183330_x7fptz.jpg",
+  "name": "Afro Curlz",
+  "createdAt": {
+    "$date": "2024-07-18T00:21:13.639Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-18T00:21:13.639Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66986023f9a023587bcf77f6"
+  },
+  "image": "https://res.cloudinary.com/dg0qc5gkl/image/upload/v1721256621/2149158599_lgyxyy.jpg",
+  "name": "Ladie Braidz",
+  "createdAt": {
+    "$date": "2024-07-18T00:21:55.141Z"
+  },
+  "updatedAt": {
+    "$date": "2024-07-18T00:21:55.141Z"
+  },
+  "__v": 0
+}]

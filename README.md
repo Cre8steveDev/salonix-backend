@@ -95,8 +95,17 @@ GET {{HOST_URL}}/api/resources/popular
 ```bash
 POST {{HOST_URL}}/api/resources/services/seed
 POST {{HOST_URL}}/api/resources/popular/seed
-POST {{HOST_URL}}/api/resources/update-wallet
 ```
+
+### Insert the JSON Data below for the Services into your Database
+
+You can find the data in the json file `./Salonix.services.json`
+
+### Insert the JSON Data below for the Popular Hairstyles into your Database
+
+You can find the data in the json file `./Salonix.popularhairstyles.json`
+
+Study the schema to understand the document.
 
 ### Getting Appointment Data
 
@@ -106,8 +115,6 @@ POST {{HOST_URL}}/api/appointments/book 🔐
 GET {{HOST_URL}}/api/appointments/all-appointments
 
 ```
-
-[Provide detailed API documentation, including available endpoints, request/response formats, and authentication requirements]
 
 ## Database Schema
 
